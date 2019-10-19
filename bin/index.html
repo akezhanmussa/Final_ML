@@ -1,0 +1,30 @@
+{% extends "bootstrap/base.html" %}
+<!doctype html>
+<!-- <title>This is an example page</title> -->
+<body>
+   {% block content %}
+      <h1>Upload new Picture</h1>
+      <form method=post enctype=multipart/form-data class="custom-file">
+         <div style="position:relative;">
+            <a class='btn btn-primary' href='javascript:;'>
+                  Choose Picture...
+                  <input type="file" name = Image style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40"  onchange='$("#upload-file-info").html($(this).val());'>
+            </a>
+            &nbsp;
+            <span class='label label-info' id="upload-file-info"></span>
+            <button type="submit" class="btn btn-success">Submit</button>
+         </div>
+      </form>
+      
+      <br>
+      
+      {% if uploaded == 1 %}
+         <img src="{{url_for('static', filename = filename)}}" width = 400px height = 400px/>
+         <h1>{{label}}</h1>
+      {% else %}
+         
+         Please upload the picture
+      
+      {% endif %}
+   {% endblock %}
+</body>
