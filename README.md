@@ -1,6 +1,4 @@
 # Final_ML
---------------------DESCRIPTION OF THE PROJECT CODE---------------
-
 Final_ML contains the code of interface and the model training process.
 
 models.py contains the AlexNet class
